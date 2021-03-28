@@ -3,9 +3,11 @@
     <head>
         <title>About me</title>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-          <style>
-              
-              body{
+<style>
+    html{
+    scroll-behavior:smooth;
+}
+body{
     background-color:#f9dbbd;
     text-indent:15%;
     margin:0;
@@ -14,7 +16,7 @@
    display:none;
 }
 h3{
-    color:#450920;
+    color:#f9dbbd;
     font-size:25px;
     position:relative;
     top:35px;
@@ -157,7 +159,6 @@ h2{
     position:absolute;
     top:300px;
     left:60%;
-    position:absolute ;
 }
 .image3 img{
     height:100px;
@@ -172,15 +173,20 @@ h2{
     position:absolute;
     top:440px;
     left:60%;
-    position:absolute ;
 }
 .image5 img{
     height:100px;
     width:100px;
     position:absolute;
     top:580px;
-    left:40%;
-    position:absolute ;
+    left:15%;
+}
+.image6 img{
+    height:100px;
+    width:100px;
+    position:absolute;
+    top:580px;
+    left:60%;
 }
 p{
     color:black;
@@ -210,7 +216,12 @@ p{
 .image5 p{
     position:absolute;
     top:665px;
-    left:48%;
+    left:20%;
+}  
+.image6 p{
+    position:absolute;
+    top:665px;
+    left:70%;
 }   
 .bar1{
     height:330px;
@@ -348,7 +359,7 @@ p{
     position:absolute;
     top:2080px; 
     }
-          </style>
+</style>
 </head>
     </head>
     <body >
@@ -362,9 +373,9 @@ p{
               <a href="#bar">MENU</a>
                <div class="dropmenu">
                  <a href="#">Home</a>
-                 <a href="#skills">Skills</a>
-                 <a href="#c++">Drawings</a>
-                 <a href="#clone">Clone</a>
+                 <a href="#text">Skills</a>
+                 <a href="#py">Drawings</a>
+                 <a href="#right">Clone</a>
                   <a href="#ui">Food</a>
                   <a href="#contact">Contact</a>
                </div>
@@ -384,14 +395,17 @@ src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtwZunE5aVGGmpK-6q9
                    <p>JavaScript</p>
                    <img src="https://img.icons8.com/color/344/javascript.png"></div> 
                    <div class="image4">
-                   <p>Python</p>
+                   <p id="py">Python</p>
                    <img src="https://img.icons8.com/color/2x/python.png"></div> 
                    <div class="image5">
-                   <p id="c++" >C++</p>
+                   <p>C++</p>
                    <img id="c++" src="https://img.icons8.com/color/452/c-plus-plus-logo.png"></div> 
+                   <div class="image6">
+                   <p>C</p>
+                   <img id="c" src="https://img.icons8.com/color/2x/c-programming.png"></div> 
             <div class="bar1">
                 
-             <center> <img id="slider" src="https://lh3.googleusercontent.com/_S4VNLLlJ5FrXukQbLUySHHc75EOWlo1yW4NhZD67Nw1IFJsUpxmdaMlXKbNL7H9IVHmMaAa3rehCKHlfWziCOmEOLVjrvQYYYtLOK_37aIo83ghzYgPxkjqpgFweAXP8hsl5C7O_g=w2400"></center>
+             <center> <img id="slider" src="https://lh3.googleusercontent.com/pw/ACtC-3d6s_cHF77s3j1PmP4lLUwryRHoTFt4-Syh1r5SCuuW4B7nvfQhzyNgJFtw9PG6mZX_m1OkwjJjeH4EDADNsar6LqD4QPXdOhoXxIqm9YvxHj9oBIQikAPhUYPIhzAG_kREC0K1AGj3BZReMcPyiMrd=w720-h960-no?authuser=0"></center>
             </div> 
             <img id="left" onclick="left()" src="https://img.icons8.com/wired/452/less-than.png"> 
             <img id="right" onclick="right()" src="https://img.icons8.com/wired/2x/more-than.png">
@@ -407,15 +421,25 @@ src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRtwZunE5aVGGmpK-6q9
             <img id="greater" onclick="greater()" src="https://img.icons8.com/wired/2x/more-than.png">
                 <h2 id="Food">FOOD</h2>
                 <h2 id="contact">CONTACT</h2>
-                <a href="https://www.instagram.com/programmer__404/" id="p1">Insta</a>
+                <a href="https://www.instagram.com/ed250502?r=nametag" id="p1">Insta</a>
                    <img id="insta" src="https://img.icons8.com/fluent/2x/instagram-new.png">
                    <a href="https://github.com/dashboard"id="p2">GitHub</a>
                    <img id="git" src="https://img.icons8.com/fluent/2x/github.png">
                     <div class="bar3"></div>
        </div>
-    <script>
- function loader() {
- var myVar = setTimeout(content,7000);
+    
+ <script>
+     var i=0,text;
+var text = "                                                I am DHIVYA     IT student.";    
+function type() {
+    if(i<text.length){
+      document.getElementById("text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type,200);
+        }}
+type();  
+function loader() {
+ var myVar = setTimeout(content,9000);
 }
 loader();
 function content() 
@@ -424,11 +448,10 @@ document.getElementById("loader").style.display = "none";
 document.getElementById("content").style.display = "block";
 }
 var images = [
-    'http://lh3.googleusercontent.com/_S4VNLLlJ5FrXukQbLUySHHc75EOWlo1yW4NhZD67Nw1IFJsUpxmdaMlXKbNL7H9IVHmMaAa3rehCKHlfWziCOmEOLVjrvQYYYtLOK_37aIo83ghzYgPxkjqpgFweAXP8hsl5C7O_g=w2400',  
-    'https://lh3.googleusercontent.com/pw/ACtC-3exQlRtsOiMgcSD7HSp8-tkLlPkI2fegt9nyy6EtD8PS-MD0hUpbPJ-gwZA-F6CapLJZVmJB-EB7-IB9nSrI4lBf526HH379MvCE7WfvV7T5CPBau1BUatfPsVPGO98hRGZffAE5O3Yf5lWVCWXwHH9=s720-no', 
-    'https://lh3.googleusercontent.com/pw/ACtC-3fBPY4iWA63BPQEKJEhBwRBQXDq77WZas7NqtMJZifQQK-QMNDJhhZSiI7aunEpYxXlm4IZTWJTY52KX79vRxrpOTNHU4tbM3ucB0RmGHaYVxPDrvNyS_kWPYSc_e7rdgHlTYcnU3X58rwcvb3Rb5DA=s720-no', 
-    'https://lh3.googleusercontent.com/pw/ACtC-3eoW6-j53LbYBPyMumo6HRcfyNfplknXiPoZy2a6IgqFOj9L_jyTswPPLNph2hcLX9IksqsAT4dZuiLjLKNx81ggT9N0ySll-hVrnjo77pwsQqNiEvk7EWEkvx6vC6s4h_WSUMi1Bgn1RSGNwUJtGcP=s720-no',
-'https://lh3.googleusercontent.com/pw/ACtC-3dqWYWk0NOSFR8CN4XBSyiu2FSWtwoSnbHEHigOawJRn3-rl2m-2_HvmJcvt-JhzqOW2NW9xQ7tZWhXM2OG9PQM1-UOXurpCXCzK1k3rzo0PuUPPrWwU9FzUCcTDXF-YPcDeGBZLxCcUB-BsAsy3tQj=s720-no'
+    'https://lh3.googleusercontent.com/pw/ACtC-3d6s_cHF77s3j1PmP4lLUwryRHoTFt4-Syh1r5SCuuW4B7nvfQhzyNgJFtw9PG6mZX_m1OkwjJjeH4EDADNsar6LqD4QPXdOhoXxIqm9YvxHj9oBIQikAPhUYPIhzAG_kREC0K1AGj3BZReMcPyiMrd=w720-h960-no',  
+   'https://lh3.googleusercontent.com/pw/ACtC-3fBPY4iWA63BPQEKJEhBwRBQXDq77WZas7NqtMJZifQQK-QMNDJhhZSiI7aunEpYxXlm4IZTWJTY52KX79vRxrpOTNHU4tbM3ucB0RmGHaYVxPDrvNyS_kWPYSc_e7rdgHlTYcnU3X58rwcvb3Rb5DA=s720-no',
+ 'https://lh3.googleusercontent.com/pw/ACtC-3czNj09iocAYRz0MrCzxkm3C13Qb4QH43TYpRp0IUX44XLyHWJX1fRbXH5oINP4Pjyae0iFnjcvggVd-216cS-6PNkTlOh5b0el9rUtKPQRsD8ZjpJAB5ooJDmrO3X24zlpl-i2katJf4dAufwpydrC=w579-h772-no', 
+     'https://lh3.googleusercontent.com/pw/ACtC-3eoW6-j53LbYBPyMumo6HRcfyNfplknXiPoZy2a6IgqFOj9L_jyTswPPLNph2hcLX9IksqsAT4dZuiLjLKNx81ggT9N0ySll-hVrnjo77pwsQqNiEvk7EWEkvx6vC6s4h_WSUMi1Bgn1RSGNwUJtGcP=s720-no'
 ];
 var d = 0;
 function right() {
@@ -451,9 +474,8 @@ function left() {
 var images1 = [
     'https://lh3.googleusercontent.com/pw/ACtC-3cqfm_SoZS3pBBgY83hw_-8SjDAHGfWenj3HvJyKHLWKp0Y3ghAgVwRvJjn8Y_Mgl0Kkwu2eJRznp1nqeyKBvmOnp-JPTiEp2P0E-72ybfgXy4ABlcZlCpiR6nFi_kc1q2W4dLijahtk7ffnXaI9oYI=w720-h674-no', 
     'https://lh3.googleusercontent.com/pw/ACtC-3dAjyxm1sD92spnTuJWuW5sDZb_CYQafNzKYYvJdzmOk1E5XKh-_wZzbXz2DR2LrnWtD_TgHp36NJ8HxtaZHzsknhI2u__Wrp8im5rXv3_wp1URooV4dNtjEVrOyDoDDMtIvZNIGLoHZTlGOMFIwD3T=s720-no', 
-    'https://lh3.googleusercontent.com/pw/ACtC-3ffsT5Qfb3phbrq-qIO_XJfU-wqyegbukEBBGaM4kAIkWLHBTeKz-MO2BMKcP44LY7CcGWqHr5wT-c12Dybg-oU-k6rodyTR7LgdMq17aoupZP-IMNd3c5-_CGS5oNpXEn5YQCVbBVqP5asUYxBUyf9=s720-no', 
-    'https://lh3.googleusercontent.com/pw/ACtC-3fAqlg6BayKxrr-JCevZtx31plBR6N9pC97gEnU3_VprcF2cGiO_SsjJpYLgHEke66L0TlDVv4F2yr1krdmMnYinhfGnoKbNVXGSzF_9AQlL5FUMN-VUIzemcHgHQAOFDp4UYPjM1G9qAiaJMSwHEhJ=s720-no',
-    'https://lh3.googleusercontent.com/pw/ACtC-3cAFvkOFeqeRCLmvQXTdC5z8wxvy9V1CqzOUFCF9ezQobStwDnZmMJJuuL3854rSuqgOSxta_3UsC6-MYIZLlAtbvLXItlA5J0ILrVG3AhKmdLYELwnbdQ4EnCFWQrs4pFfnujP5Aa0doUinYi2cYtk=s720-no'
+     'https://lh3.googleusercontent.com/pw/ACtC-3fAqlg6BayKxrr-JCevZtx31plBR6N9pC97gEnU3_VprcF2cGiO_SsjJpYLgHEke66L0TlDVv4F2yr1krdmMnYinhfGnoKbNVXGSzF_9AQlL5FUMN-VUIzemcHgHQAOFDp4UYPjM1G9qAiaJMSwHEhJ=s720-no',
+
 ];
 var e = 0;
 function lesser() {
@@ -474,15 +496,8 @@ function greater() {
 }
 
    
-var i=0,text;
-var text = "                                      I am DHIVYA     IT student.";    
-function type() {
-    if(i<text.length){
-      document.getElementById("text").innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type,200);
-        }}
-type();   
-       </script>
+ 
+ </script>
+       
     </body>
 </html>
